@@ -226,7 +226,7 @@ export default function Settings() {
                   <p className="text-xs text-text-muted mt-0.5">{formatDate(item.added_at)}</p>
                 </div>
                 <button
-                  onClick={() => removeBlacklist.mutate(item.token_address)}
+                  onClick={() => removeBlacklist.mutate({ address: item.token_address, chain: item.chain, addedBy: item.added_by })}
                   className="text-text-muted hover:text-red transition-colors ml-2 cursor-pointer"
                 >
                   <X size={14} />
